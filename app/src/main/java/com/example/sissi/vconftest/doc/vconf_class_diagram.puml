@@ -1,0 +1,65 @@
+@startuml
+
+'note as comment
+'<color:red> Class diagram for VConf </color>
+'end note
+
+'scale 150 width
+
+title Video Conference UI
+
+class ConfMainUI{
+-Fragment prepareConfFrag
+-Fragment confBigMainFrag
+-Fragment confBigAssFrag
+-Fragment confSmallMainFrag
+-Fragment confSmallAssFrag
+-Fragment confTopFrag
+-Fragment confBottomFrag
+}
+
+class Fragment
+class JoinConfFrag
+class StreamRecvFrag
+class PreviewFrag
+class TopFuncFrag
+class BottomFuncFrag
+
+Fragment <|-- JoinConfFrag
+Fragment <|-- StreamRecvFrag
+Fragment <|-- PreviewFrag
+Fragment <|-- TopFuncFrag
+Fragment <|-- BottomFuncFrag
+
+Fragment <--* ConfMainUI
+
+'JoinConfFrag <--* ConfMainUI
+'StreamFrag <--* ConfMainUI
+'PreviewFrag <--* ConfMainUI
+'TopFuncFrag <--* ConfMainUI
+'BottomFuncFrag <--* ConfMainUI
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+@enduml
